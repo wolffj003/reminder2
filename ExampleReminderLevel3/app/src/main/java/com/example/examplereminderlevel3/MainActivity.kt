@@ -42,6 +42,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun startAddActivity() {
+        val intent = Intent(this, AddActivity::class.java)
+        startActivityForResult(intent, ADD_REMINDER_REQUEST_CODE)
+    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
@@ -53,12 +59,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-
-    private fun startAddActivity() {
-        val intent = Intent(this, AddActivity::class.java)
-        startActivityForResult(intent, ADD_REMINDER_REQUEST_CODE)
     }
 
 
